@@ -436,6 +436,23 @@ textarea {
 }
 
 /* Project Grid */
+.project-banner {
+  position: relative;
+  padding: 0.6rem;
+  width: fit-content;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 0rem;
+}
+
+.project-description {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -510,10 +527,47 @@ textarea {
   color: rgb(0, 0, 0);
 }
 .projects-page .nav-links li a {
-  color: rgb(211, 211, 211);
+  color: rgb(71, 71, 71);
 }
 
 .projects-page .nav-links li a:hover,
 .projects-page .nav-links li a.active {
-  color: #606060;
+  color: #000000;
 }
+
+.project-gallery {
+  padding: 0 0.6rem;
+  background: #ffffff;
+}
+
+.gallery-row {
+  display: flex;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.gallery-row img {
+  height: auto;
+  border-radius: 0;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Specific Layouts */
+.gallery-row.full img {
+  width: 100%;
+}
+
+.gallery-row.double img {
+  width: calc(50% - 0.3rem); /* Half width minus half of the gap */
+}
+
+.gallery-row.triple img {
+  width: calc(33.333% - 0.4rem); /* Adjust for 2 gaps in 3 cols */
+}
+
+.gallery-row.quad img {
+  width: calc(25% - 0.45rem); /* Adjust for 3 gaps in 4 cols */
+}
+
