@@ -1,0 +1,504 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: white;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+/* Top Nav */
+/* Navigation */
+/* Navigation Bar */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+}
+
+/* Logo on the left */
+.logo {
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  color: white;
+}
+.logo a {
+  color: white;
+  text-decoration: none;
+  text-transform: lowercase;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Links on the right */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ccc;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Project Section */
+.project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;       /* 🔸 Removed vertical space */
+  margin: 0;        /* 🔸 Ensures no outside gap */
+}
+
+.project img {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+/* If you still use overlay title (optional) */
+.project-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.project h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+/* Contact Section */
+.contact-section {
+  background: #111;
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: #aaa;
+}
+.footer {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: 6rem 2rem 2rem;
+  font-size: 0.9rem;
+  position: relative;
+  min-height: 40vh; /* Required for IntersectionObserver */
+}
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.footer-links a {
+  color: #000;
+  text-decoration: none;
+  font-size: 0.95rem;
+  gap: 2rem;
+  height: 8rem;
+
+}
+
+.footer-bottom {
+  border-top: 1px solid #ccc;
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.footer::after {
+  content: '';
+  display: block;
+  height: 0.5rem; /* creates space after copyright */
+}
+#footer-trigger {
+  height: 1px;
+  width: 100%;
+}
+.explore-btn {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 1.5px solid rgb(255, 255, 255);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 999;
+  opacity: 1;
+  transition: opacity 0.3s ease, pointer-events 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.arrow-icon {
+  width: 14px;
+  height: 14px;
+}
+#hide-button-trigger {
+  height: 200px;  /* makes the observer trigger earlier */
+  width: 100%;
+}
+
+
+/* About Page Styles*/
+
+.full-bg {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+.about-hero {
+  position: relative;
+}
+.about-hero .about-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  background-image: url('assets/images/profile.jpg'); /* 🔁 your image path */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-overlay {
+  position: absolute;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  backdrop-filter: blur(0px);
+  background: rgba(0, 0, 0, 0);
+  border-radius: 12px;
+  max-width: 800px;
+}
+
+.about-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.about-overlay p {
+  font-size: 1rem;
+  color: #eee;
+  line-height: 1.6;
+}
+
+
+/* Contact styles */
+
+.contact-hero {
+  background-color: #ffffff;
+  color: black;
+  padding: 6rem 2rem 3rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.contact-form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 2rem;
+  background: #fff;
+  color: black;
+  gap: 3rem;
+}
+
+.form-left {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-right {
+  flex: 2;
+  min-width: 300px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+  font-size: 1rem;
+  padding: 8px 0;
+  color: black;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.submit-btn {
+  margin-top: 30px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.submit-btn::after {
+  content: '+';
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .locations {
+    flex-direction: column;
+  }
+
+  .contact-form-wrapper {
+    flex-direction: column;
+  }
+
+  .location {
+    border-left: none;
+    border-top: 1px solid #000;
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+
+  .location:first-child {
+    border-top: none;
+  }
+}
+/* === Contact Page Navigation Override === */
+.contact-page .nav {
+  background-color: #ffffff;
+  backdrop-filter: none;
+  border-bottom: 1px solid #4b4b4b;
+  padding: 1.2rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.contact-page .logo a {
+  color: rgb(0, 0, 0);
+}
+.contact-page .nav-links li a {
+  color: rgb(166, 166, 166);
+}
+
+.contact-page .nav-links li a:hover,
+.contact-page .nav-links li a.active {
+  color: #000000;
+}
+
+/* Project styles */
+
+/* Filter Buttons */
+.filter-section {
+  padding: 7rem 2rem 2rem;
+  text-align: center;
+  background: #fff;
+}
+
+.filter-btn {
+  border: 1px solid black;
+  background: transparent;
+  color: black;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  margin: 0.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: black;
+  color: white;
+}
+
+/* Project Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2px;
+  background: rgb(255, 255, 255);
+}
+
+.project-card {
+  aspect-ratio: 2 / 3; /* Matches vertical Instagram ratio */
+  overflow: hidden;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.02);
+}
+.project-card {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  opacity: 0;
+}
+
+.project-card:hover .project-overlay {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.project-overlay h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.project-overlay p {
+  font-size: 0.85rem;
+  margin: 0.2rem 0 0;
+  color: #ccc;
+}
+/* === Projects Page Navigation Override === */
+.projects-page .nav {
+  background-color: #ffffff;
+  backdrop-filter: none;
+  border-bottom: 1px solid #ffffff;
+  padding: 1.2rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.projects-page .logo a {
+  color: rgb(0, 0, 0);
+}
+.projects-page .nav-links li a {
+  color: rgb(211, 211, 211);
+}
+
+.projects-page .nav-links li a:hover,
+.projects-page .nav-links li a.active {
+  color: #606060;
+}
