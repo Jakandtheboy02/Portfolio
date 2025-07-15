@@ -1,3 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -63,9 +71,6 @@ body, html {
 .nav-links li a:hover {
   color: #ccc;
 }
-html {
-  scroll-behavior: smooth;
-}
 
 
 /* Project Section */
@@ -86,10 +91,8 @@ html {
 
 /* If you still use overlay title (optional) */
 .project-overlay {
-  height: auto;
-  width: auto;
-  background: rgba(0, 0, 0, 0.557);
-  padding: 0rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
   text-align: center;
   border-radius: 12px;
 }
@@ -218,43 +221,52 @@ html {
 
 
 /* About Page Styles*/
-
-.full-bg {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  display: block;
+/* === About Page Navigation Override === */
+.about-page .nav {
+  background-color: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
+  padding: 1.2rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
+
+.about-page .logo a {
+  color: rgb(15, 15, 15);
+}
+
+.about-page .nav-links li a {
+  color: rgba(123, 123, 123, 0.75);
+}
+
+.about-page .nav-links li a:hover,
+.about-page .nav-links li a.active {
+  color: rgb(15, 15, 15);
+}
+
 .about-hero {
   position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 3rem; /* Add some spacing below navbar if needed */
+  text-align: center;
 }
+.original-size-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 .about-hero .about-overlay {
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.about-hero {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  width: 100%;
-  overflow: hidden;
-}
-
-.about-hero::before {
-  content: '';
-  background-image: url('assets/images/profile.jpg'); /* 🔁 your image path */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 .about-overlay {
   position: absolute;
@@ -265,6 +277,7 @@ html {
   background: rgba(0, 0, 0, 0);
   border-radius: 12px;
   max-width: 800px;
+  z-index: 2;
 }
 
 .about-overlay h1 {
