@@ -71,6 +71,61 @@ body, html {
 .nav-links li a:hover {
   color: #ccc;
 }
+/* === Centered Scrolling Titles Over Project Images === */
+.project {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Wrapper centers the title vertically */
+.scrolling-title-wrapper {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* The animated scrolling title */
+.scrolling-title-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-horizontal 30s linear infinite;
+  padding-left: 100%;
+  font-family: 'Outfit', sans-serif; /* 👈 Replace with your font */
+  font-weight: 100; /* or 100 for ultra-thin */
+  font-size: 4rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #00000021;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0); /* For contrast */
+  letter-spacing: 2px;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Optional: Responsive tweaks */
+@media (max-width: 768px) {
+  .scrolling-title-text {
+    font-size: 1.5rem;
+  }
+}
 
 
 /* Project Section */
